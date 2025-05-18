@@ -9,8 +9,9 @@ import Page4 from "./pages/Page4";
 import Footer from "./pages/Footer";
 import Lenis from "lenis";
 import gsap from "gsap";
-import { useScroll } from "motion/react";
-import { p } from "motion/react-client";
+import { div } from "motion/react-client";
+
+
 
 const App = () => {
   // Initialize Lenis
@@ -24,7 +25,20 @@ const App = () => {
   });
 
   
- 
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    const fontsPromise = document.fonts.ready
+
+    const windowPromise = new Promise(resolve => {
+      if (document.readyState === 'complete') return resolve()
+      window.addEventListener('load', resolve)
+    })
+    Promise.all([fontsPromise, windowPromise]).then(() => {
+      
+      setTimeout(() => setReady(true), 100);
+    })
+
+  },[])
   useEffect(() => {
     const tl = gsap.timeline()
     tl.fromTo(".class0",
@@ -44,8 +58,12 @@ const App = () => {
       })
     }, 3600);
   }, [])
+ 
+
     
-  
+    if (!ready) {
+    return <div className="w-full h-screen bg-black"></div>
+  }
   
   return (
    
