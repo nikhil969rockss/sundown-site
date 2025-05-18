@@ -43,20 +43,23 @@ const App = () => {
     const tl = gsap.timeline()
     tl.fromTo(".class0",
       
-      { display: "block" }, { display: "none", duration: 0.5, delay: 0.4 }
+      { display: "block" }, { display: "none", duration: 0.5, delay: 0 }
       
     )
     setTimeout(() => {
       tl.fromTo(".class1", { display: "block" }, { display: "none", duration: 0.6 })
-    }, 1100);
+    },600);
     setTimeout(() => {
       tl.fromTo(".class2", { display: "block" }, { display: "none", duration: 0.7 })
-    }, 2400);
+    },1700 );
+    setTimeout(() => {
+      tl.fromTo(".class3", { display: "block" }, { display: "none", duration: 0.8 })
+    }, 2500);
     setTimeout(() => {
       tl.to(".reload-overlay", {
         y: "-100%"
       })
-    }, 3600);
+    }, 3100);
   }, [])
  
 
@@ -73,7 +76,7 @@ const App = () => {
         
        
         <div  className="reload-overlay bg-black fixed w-full h-screen top-0 z-100 flex justify-center items-center text-white ">
-          {["Environments", "Experiences", "Contents"].map((item,index) => (
+          {["", "Environments", "Experiences","contents"].map((item,index) => (
             <p className={ ` ${"class"+index} font-[neu1] text-transparent bg-gradient-to-b from-orange-500 to-orange-600 bg-clip-text hidden absolute text-[7vh] md:text-[6vw]`} key={Math.random()}
             >{item }
 
