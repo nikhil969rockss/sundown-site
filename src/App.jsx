@@ -35,7 +35,7 @@ const App = () => {
     })
     Promise.all([fontsPromise, windowPromise]).then(() => {
       
-      setTimeout(() => setReady(true), 100);
+      setReady(true)
     })
 
   },[])
