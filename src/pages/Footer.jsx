@@ -1,10 +1,22 @@
 import React from "react";
+import Ball from "../components/Ball";
 
 const Footer = () => {
   return (
     <>
       <div className="w-full md:h-[100vh] h-[70vh] bg-transparent"></div>
+        
+      
       <div className="text-white bg-black w-full md:h-screen h-[70vh] fixed bottom-0 left-0 flex justify-center items-end z-[1] p-4 ">
+        <div className="desktop-balls hidden md:block">
+          <Ball  className={"left-[-20%] top-[-40%] w-[80vw] h-[60vw]" } />
+          <Ball className={"left-[50%]  -translate-x-1/2  top-[-70%] w-[60vw] h-[70vw]"} />
+          <Ball   className={"right-[-10%]  top-[-40%] w-[90vw] h-[50vw]"} />
+        </div>
+        <div className="mobile-balls md:hidden">
+          <Ball className={"w-[50vh] h-[40vh] top-[-10%] "} />
+          
+        </div>
         <div className="email-div absolute w-[80%] md:w-[90%] md:p-4 top-[4%]  mt-5 md:mt-10 flex justify-between items-center  ">
           <div className="flex flex-col justify-center font-[neu1] text-[4vh] leading-[4vh] gap-2 ">
             <p>work</p>
@@ -31,7 +43,7 @@ const Footer = () => {
             <a href="#" className="cursor-pointer">
               <i className="ri-instagram-line"></i>Instagram
             </a>
-            <a href="#" className="cursor-pointer">
+            <a target="_blank" href="https://www.linkedin.com/in/nikhil-randhawa-9a197720b" className="cursor-pointer">
               <i className="ri-linkedin-box-fill"></i>LinkedIn
             </a>
           </div>

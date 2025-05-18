@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 
 import 'remixicon/fonts/remixicon.css'
@@ -10,6 +10,7 @@ import Footer from "./pages/Footer";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { useScroll } from "motion/react";
+import { p } from "motion/react-client";
 
 const App = () => {
   // Initialize Lenis
@@ -21,17 +22,47 @@ const App = () => {
   lenis.on('scroll', (e) => {
    
   });
+
+  
  
+  useEffect(() => {
+    const tl = gsap.timeline()
+    tl.fromTo(".class0",
+      
+      { display: "block" }, { display: "none", duration: 0.5, delay: 0.4 }
+      
+    )
+    setTimeout(() => {
+      tl.fromTo(".class1", { display: "block" }, { display: "none", duration: 0.6 })
+    }, 1100);
+    setTimeout(() => {
+      tl.fromTo(".class2", { display: "block" }, { display: "none", duration: 0.7 })
+    }, 2400);
+    setTimeout(() => {
+      tl.to(".reload-overlay", {
+        y: "-100%"
+      })
+    }, 3600);
+  }, [])
+    
   
   
   return (
    
-   
+  
     <>
       <main className="min-h-screen bg-black relative ">
+        
        
-       
-        {/* #EFEAE3 */}
+        <div  className="reload-overlay bg-black fixed w-full h-screen top-0 z-100 flex justify-center items-center text-white ">
+          {["Environments", "Experiences", "Contents"].map((item,index) => (
+            <p className={ ` ${"class"+index} font-[neu1] text-transparent bg-gradient-to-b from-orange-500 to-orange-600 bg-clip-text hidden absolute text-[7vh] md:text-[6vw]`} key={Math.random()}
+            >{item }
+
+            </p>
+
+          ))}
+     </div>
        <Page1/>
        <Page2/>
        <Page3 />

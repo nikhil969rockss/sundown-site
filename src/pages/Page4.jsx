@@ -66,7 +66,7 @@ const Page4 = () => {
       },
     });
   }
-  useScroll("#design", {start: "top 100%", end: "bottom 110%"})
+
   return (<>
     <div  className="bg-[#EFEAE3] w-full p-5 relative z-[10]">
       <div id="design" className=" w-full h-[100vh] md:mt-25 bg-black relative flex flex-col md:flex-row rounded-3xl justify-center items-center md:items-start transition-all duration-300">
