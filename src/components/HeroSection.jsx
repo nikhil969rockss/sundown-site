@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <div className='hero font-[neu1] flex flex-col md:flex-row-reverse  md:justify-between  '>
+    <div className='hero font-[neu1] flex flex-col md:flex-row-reverse  md:justify-between relative z-[-1]  '>
       <h1 className='text-[16vw] leading-[12vw] md:text-[10vw] md:leading-[8vw] uppercase self-end text-right font-900 mt-25'>spaces <br />
         that <br />
         inspire</h1>
