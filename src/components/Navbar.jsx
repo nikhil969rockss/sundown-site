@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* mobileMenu============================> */}
         <div
           onClick={() => handleClickMenu()}
-          className="sm:hidden relative z-[10] border border-black/30 rounded-full px-6 py-2 flex justify-around items-center gap-2 cursor-pointer"
+          className="sm:hidden relative z-[10000] border border-black/30 rounded-full px-6 py-2 flex justify-around items-center gap-2 cursor-pointer"
         >
           <div className="menu flex flex-col gap-1">
             <div
