@@ -53,7 +53,7 @@ Built as a personal and open-source UI showcase, it demonstrates the power of sm
 Clone the repository and run the app locally:
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:nikhil969rockss/sundown-site.git
 cd sundown-website
 npm install
 npm run dev
